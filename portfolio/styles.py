@@ -34,7 +34,7 @@ def inject_global_css(*, dark: bool) -> str:
 
     return f"""
 <style>
-.block-container {{ padding-top: 1.6rem; padding-bottom: 2.5rem; max-width: 1200px; }}
+.block-container {{ padding-top: 2.35rem; padding-bottom: 2.5rem; max-width: 1200px; }}
 
 .stApp {{
   background-color: {bg};
@@ -55,6 +55,10 @@ h1, h2, h3 {{
   color: {text};
 }}
 
+section[data-testid="stMain"] > div {{
+  padding-top: 0.35rem;
+}}
+
 .stCaption, [data-testid="stCaptionContainer"] {{
   color: {faint} !important;
 }}
@@ -64,13 +68,27 @@ div[data-testid="stMetricValue"] {{
   overflow: visible !important;
   text-overflow: clip !important;
   white-space: normal !important;
-  line-height: 1.25rem;
+  line-height: 1.2 !important;
   overflow-wrap: anywhere;
+  padding: 0.2rem 0 0.45rem 0 !important;
+  font-size: clamp(1.45rem, 2.8vw, 1.85rem) !important;
+}}
+
+[data-testid="stMetric"] {{
+  overflow: visible !important;
+  min-height: 4.5rem;
+  padding: 0.35rem 0 0.85rem 0 !important;
+  align-items: flex-start !important;
+}}
+
+[data-testid="stMetric"] > div {{
+  overflow: visible !important;
 }}
 
 [data-testid="stMetricLabel"] {{
   white-space: normal !important;
   overflow: visible !important;
+  padding-bottom: 0.2rem !important;
 }}
 
 .ah-hero {{
@@ -181,8 +199,22 @@ div[data-testid="stMarkdownContainer"] > p {{ margin-bottom: 0.25rem; }}
   border: 1px solid {border};
 }}
 
+[data-testid="stTabs"] {{
+  margin-top: 0.35rem;
+  padding-top: 0.5rem;
+  position: relative;
+  z-index: 2;
+}}
+
 [data-testid="stTabs"] [data-baseweb="tab-list"] {{
   gap: 8px;
+  padding-top: 0.15rem;
+  flex-wrap: wrap;
+}}
+
+[data-testid="stTabs"] button {{
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
 }}
 </style>
 """.strip()
