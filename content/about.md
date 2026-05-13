@@ -6,7 +6,8 @@ Each app is meant to be explored hands-on: adjust assumptions, run scenarios, an
 
 ### What you will find here
 
-- **Forecasting & revenue** — demand and LTV-style problems, media mix, and pricing dynamics  
+- **Forecasting & revenue** — demand and LTV-style problems, media mix, and revenue planning workflows  
+- **Pricing projects** — dynamic pricing and elasticity simulations, conjoint analysis, price–volume–mix (PVM) diagnostics, and LTV/CAC payback framing  
 - **Experimentation & growth** — A/B testing, churn risk, and CRM retention impact  
 - **Market intelligence** — competitive mapping and benchmark-style positioning views  
 - **Data systems** — recommendations, SQL-centric data quality (GuardianSQL)  
