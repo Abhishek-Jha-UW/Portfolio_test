@@ -221,16 +221,18 @@ with tab_ai:
     user_q = st.text_area(
         "Your question",
         height=120,
+        key="ai_question",
         placeholder="Example: I am hiring for a growth role focused on retention experiments and causal inference.",
     )
     if st.button("Get suggestions", type="primary", disabled=not api_key):
-        if not (user_q or "").strip():
+        q = (st.session_state.get("ai_question") or "").strip()
+        if not q:
             st.warning("Enter a question first.")
         else:
             with st.spinner("Thinking…"):
                 try:
                     answer = suggest_apps(
-                        user_q.strip(),
+                        q,
                         compact_for_ai(projects),
                         api_key=api_key,
                         model=model,
@@ -239,12 +241,15 @@ with tab_ai:
                     answer = f"**Something went wrong.**\n\n`{type(exc).__name__}: {exc}`"
             st.session_state["ai_last_answer"] = answer
 
-    if st.session_state.get("ai_last_answer"):
+    last = st.session_state.get("ai_last_answer")
+    if last is not None and str(last).strip() != "":
         st.markdown("---")
-        st.markdown(st.session_state["ai_last_answer"])
-        if st.button("Clear AI response"):
+        st.markdown(str(last))
+        if st.button("Clear AI response", key="ai_clear_btn"):
             st.session_state.pop("ai_last_answer", None)
             st.rerun()
+    elif api_key:
+        st.caption("Tip: click **Get suggestions** after you type your question.")
 
 st.divider()
 st.caption("© 2026 Abhishek Jha • Analytics & Decision Science")
