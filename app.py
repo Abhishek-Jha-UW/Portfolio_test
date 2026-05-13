@@ -5,7 +5,7 @@ import os
 
 import streamlit as st
 
-from portfolio.ai import suggest_apps
+from portfolio.ai import resolve_cost_efficient_model, suggest_apps
 from portfolio.data import (
     ROOT,
     compact_for_ai,
@@ -206,15 +206,17 @@ with tab_ai:
         "The assistant recommends up to three apps using **only** the metadata in this hub."
     )
     api_key = _secret("OPENAI_API_KEY", "")
-    model = _secret("OPENAI_MODEL", "gpt-4o-mini") or "gpt-4o-mini"
+    model_raw = _secret("OPENAI_MODEL", "") or ""
+    model, model_overridden = resolve_cost_efficient_model(model_raw or None)
 
-    if not api_key:
-        st.info(
-            "Add `OPENAI_API_KEY` to Streamlit **Secrets** (Cloud) or your environment (local). "
-            "Optional: `OPENAI_MODEL` (defaults to `gpt-4o-mini`)."
-        )
-    else:
-        st.caption(f"Model: `{model}`")
+    if api_key:
+        if model_overridden and model_raw.strip():
+            st.caption(
+                f"Using **`{model}`** (cost-efficient). "
+                f"`OPENAI_MODEL` was ignored for `{model_raw.strip()}` — only mini / 3.5-class models are allowed."
+            )
+        else:
+            st.caption(f"Using **`{model}`** (cost-efficient).")
 
     user_q = st.text_area(
         "Your question",

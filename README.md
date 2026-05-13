@@ -21,17 +21,17 @@ Edit **`data/site.json`**:
 
 ## OpenAI (optional)
 
-**Streamlit Community Cloud:** App settings → Secrets → TOML, for example:
+**Streamlit Community Cloud:** App settings → Secrets → TOML:
 
 ```toml
 OPENAI_API_KEY = "sk-..."
-# Optional:
-OPENAI_MODEL = "gpt-4o-mini"
 ```
 
-**Local shell:** set environment variables `OPENAI_API_KEY` and optionally `OPENAI_MODEL`.
+**Cost-efficient models only:** the hub defaults to **`gpt-4o-mini`**. Optionally set `OPENAI_MODEL` to another **allowed** id: any **`gpt-4o-mini`** snapshot or **`gpt-3.5-turbo`** variant. Premium models (e.g. full `gpt-4o`) are **not** used — the app falls back to `gpt-4o-mini`.
 
-If no key is set, the **AI guide** tab explains what to add; the rest of the hub works normally.
+**Local shell:** set `OPENAI_API_KEY` (and optionally `OPENAI_MODEL` within the allowlist above).
+
+If no key is set, **Get suggestions** stays disabled; the rest of the hub works normally.
 
 ## Data model
 
