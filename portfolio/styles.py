@@ -265,5 +265,31 @@ div[data-testid="stMarkdownContainer"] > p {{ margin-bottom: 0.25rem; }}
 [data-testid="stTabs"] button:hover {{
   color: {text} !important;
 }}
+
+/* Primary & form submit — Streamlit default primary is low-contrast on dark theme */
+[data-testid="baseButton-primary"],
+[data-testid="stFormSubmitButton"] button {{
+  background-color: {btn} !important;
+  color: {btn_text} !important;
+  border: 1px solid {btn} !important;
+  font-weight: 700 !important;
+}}
+[data-testid="baseButton-primary"]:hover,
+[data-testid="stFormSubmitButton"] button:hover:not(:disabled) {{
+  background-color: {btn_hover_bg} !important;
+  color: {btn_text} !important;
+  border-color: {btn_hover_bg} !important;
+}}
+[data-testid="baseButton-primary"]:disabled,
+[data-testid="stFormSubmitButton"] button:disabled {{
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}}
+[data-testid="baseButton-primary"] p,
+[data-testid="baseButton-primary"] span,
+[data-testid="stFormSubmitButton"] button p,
+[data-testid="stFormSubmitButton"] button span {{
+  color: {btn_text} !important;
+}}
 </style>
 """.strip()
