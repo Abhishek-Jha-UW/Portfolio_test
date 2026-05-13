@@ -1,0 +1,174 @@
+{
+  "projects": [
+    {
+      "id": "analytics-decision-systems",
+      "name": "Analytics Decision Systems",
+      "url": "https://aanalytics-app-abhishek-jha-uw.streamlit.app/",
+      "category": "Portfolio",
+      "tagline": "Earlier analytics hub and decision-systems landing experience.",
+      "tags": ["Portfolio", "Legacy Hub"],
+      "featured": false,
+      "order": 90
+    },
+    {
+      "id": "timeseries-forecasting",
+      "name": "Timeseries Forecasting",
+      "url": "https://abhishek-jha-uw-forecasting-app-bu6esr3b9qxhwgkeu6rer7.streamlit.app/",
+      "category": "Forecasting & Revenue",
+      "tagline": "Time series forecasting for demand and revenue planning.",
+      "tags": ["Time Series", "Forecasting", "Python"],
+      "featured": true,
+      "order": 10
+    },
+    {
+      "id": "dynamic-pricing-elasticity",
+      "name": "Dynamic Pricing & Elasticity Simulator",
+      "url": "https://dynamic-pricing-elasticity-simulator-m9pycn5tudxyqrevs3spwl.streamlit.app/",
+      "category": "Forecasting & Revenue",
+      "tagline": "Scenario simulation to understand price–demand trade-offs.",
+      "tags": ["Pricing", "Elasticity", "Simulation"],
+      "featured": true,
+      "order": 11
+    },
+    {
+      "id": "ab-testing-tool",
+      "name": "A/B Testing Experimentation Tool",
+      "url": "https://a-b-testing-experimentation-lqmnpr27pbuqetibd5xdjk.streamlit.app/",
+      "category": "Experimentation & Growth",
+      "tagline": "Statistical testing workflow for product experiments.",
+      "tags": ["Experimentation", "Causal", "Statistics"],
+      "featured": false,
+      "order": 20
+    },
+    {
+      "id": "customer-health-churn",
+      "name": "Customer Health & Churn Early Warning",
+      "url": "https://customer-health-churn-early-warning-system-bwvjzcmbxnmvxgrudsv.streamlit.app/",
+      "category": "Experimentation & Growth",
+      "tagline": "Signals and models to identify churn risk earlier.",
+      "tags": ["Churn", "Classification", "ML"],
+      "featured": false,
+      "order": 21
+    },
+    {
+      "id": "competitive-landscape",
+      "name": "Competitive Landscape Mapping",
+      "url": "https://competitive-landscape-mapping-f66enxmzgca3xjuvhzozae.streamlit.app/",
+      "category": "Market Intelligence",
+      "tagline": "LLM-assisted strategic mapping to reveal positioning and whitespace.",
+      "tags": ["LLM", "PCA/MDS", "Strategy"],
+      "featured": false,
+      "order": 30
+    },
+    {
+      "id": "guardiansql",
+      "name": "GuardianSQL (Data Cleaning & Validation)",
+      "url": "https://guardiansql-xuah5wqluljyfhb5fe9olu.streamlit.app/",
+      "category": "Data Systems",
+      "tagline": "Data quality monitoring and validation for SQL pipelines and checks.",
+      "tags": ["Data Quality", "SQL", "Monitoring"],
+      "featured": false,
+      "order": 40
+    },
+    {
+      "id": "recommendation-system",
+      "name": "Recommendation System",
+      "url": "https://recommendation-system-user-based-collaborative-filtering-uvhmq.streamlit.app/",
+      "category": "Data Systems",
+      "tagline": "User-based collaborative filtering for personalization.",
+      "tags": ["Recommenders", "Collaborative Filtering", "ML"],
+      "featured": false,
+      "order": 41
+    },
+    {
+      "id": "rag-assistant",
+      "name": "Document Q&A Assistant (RAG)",
+      "url": "https://rag-abhi-uw.streamlit.app/",
+      "category": "GenAI",
+      "tagline": "RAG interface for querying documents with semantic retrieval.",
+      "tags": ["RAG", "LLM", "Search"],
+      "featured": true,
+      "order": 50
+    },
+    {
+      "id": "clv-vs-bootstrap",
+      "name": "CLV vs Bootstrap",
+      "url": "https://clt-vs-bootstrap.streamlit.app/",
+      "category": "Decision Science",
+      "tagline": "Compare CLT intuition versus bootstrap uncertainty, interactively.",
+      "tags": ["Inference", "Bootstrap", "Statistics"],
+      "featured": false,
+      "order": 60
+    },
+    {
+      "id": "conjoint-analysis",
+      "name": "Conjoint Analysis",
+      "url": "https://conjoint-analysis-strategy-assistant.streamlit.app/",
+      "category": "Decision Science",
+      "tagline": "AI-assisted conjoint exploration for attribute trade-offs.",
+      "tags": ["Conjoint", "Pricing", "Strategy"],
+      "featured": true,
+      "order": 61
+    },
+    {
+      "id": "retention-crm",
+      "name": "Churn & Revenue Impact (CRM)",
+      "url": "https://retention-crm.streamlit.app/",
+      "category": "Experimentation & Growth",
+      "tagline": "CRM-oriented view of retention drivers and revenue impact scenarios.",
+      "tags": ["CRM", "Churn", "Revenue"],
+      "featured": true,
+      "order": 22
+    },
+    {
+      "id": "pvm-variance",
+      "name": "PVM — Variance Analysis",
+      "url": "https://pvm-analysis-abhishek-jha.streamlit.app/",
+      "category": "Decision Science",
+      "tagline": "Price–volume–mix style variance analysis for performance diagnostics.",
+      "tags": ["PVM", "Variance", "Finance"],
+      "featured": false,
+      "order": 62
+    },
+    {
+      "id": "mmm-optimizer",
+      "name": "MMM — Marketing Mix Modeling",
+      "url": "https://mmm-budget-optimizer-abhishek-jha.streamlit.app/",
+      "category": "Forecasting & Revenue",
+      "tagline": "Media mix modeling and budget optimization for marketing spend.",
+      "tags": ["MMM", "Marketing", "Optimization"],
+      "featured": true,
+      "order": 12
+    },
+    {
+      "id": "ltv-cac-payback",
+      "name": "CLV/LTV — Lifetime Value",
+      "url": "https://ltv-forecasting-cac-payback-abhishek-jha.streamlit.app/",
+      "category": "Forecasting & Revenue",
+      "tagline": "Lifetime value, CAC, and payback framing for growth decisions.",
+      "tags": ["CLV", "LTV", "CAC"],
+      "featured": false,
+      "order": 13
+    },
+    {
+      "id": "clout-vulnerability",
+      "name": "Clout & Vulnerability — Competitor Benchmark",
+      "url": "https://clout---vulnerability-competitor-benchmark-abhishek-jha.streamlit.app/",
+      "category": "Market Intelligence",
+      "tagline": "Competitive strength and vulnerability lens across market positions.",
+      "tags": ["Competitive Intel", "Benchmarking", "Strategy"],
+      "featured": false,
+      "order": 31
+    },
+    {
+      "id": "resume-tailor",
+      "name": "Resume Tailor",
+      "url": "https://pro-resume-tailor-eilecyfhnl4rczcb44sbkw.streamlit.app/",
+      "category": "GenAI",
+      "tagline": "LLM-assisted tailoring of resume content to roles and keywords.",
+      "tags": ["GenAI", "Resume", "Career"],
+      "featured": true,
+      "order": 51
+    }
+  ]
+}
