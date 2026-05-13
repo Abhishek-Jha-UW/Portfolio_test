@@ -115,6 +115,10 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+st.markdown(
+    '<div class="ah-top-spacer" aria-hidden="true"></div>',
+    unsafe_allow_html=True,
+)
 tab_apps, tab_about, tab_ai = st.tabs(["Apps", "About", "AI guide"])
 
 with tab_apps:
@@ -156,7 +160,10 @@ with tab_apps:
                 with col:
                     _render_project_card(proj, show_featured_badge=False)
 
-    st.markdown("<div class='ah-section-label'>Browse</div>", unsafe_allow_html=True)
+    st.markdown(
+        "<div class='ah-section-label ah-section-browse'>Browse</div>",
+        unsafe_allow_html=True,
+    )
     left, mid, right = st.columns([1.25, 1.0, 0.95])
     with left:
         query = st.text_input(
