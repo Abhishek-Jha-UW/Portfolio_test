@@ -52,13 +52,6 @@ def inject_global_css(*, dark: bool) -> str:
   padding-top: 0.85rem;
   padding-bottom: 2.5rem;
   max-width: 1200px;
-  overflow: visible !important;
-}}
-
-div[data-testid="stAppViewContainer"] main,
-section[data-testid="stMain"],
-section[data-testid="stMain"] > div {{
-  overflow: visible !important;
 }}
 
 section[data-testid="stMain"] > div {{
@@ -267,6 +260,10 @@ div[data-testid="stMarkdownContainer"] > p {{ margin-bottom: 0.25rem; }}
 
 [data-testid="stTabs"] button p {{
   color: inherit !important;
+}}
+
+[data-testid="stTabs"] button:hover {{
+  color: {text} !important;
 }}
 </style>
 """.strip()

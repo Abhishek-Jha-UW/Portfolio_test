@@ -5,6 +5,29 @@ from typing import Any
 
 from openai import OpenAI
 
+# Default and allowlist keep portfolio suggestions cheap (short JSON + small replies).
+DEFAULT_AI_MODEL = "gpt-4o-mini"
+
+
+def resolve_cost_efficient_model(requested: str | None) -> tuple[str, bool]:
+    """
+    Return (model_id, overridden).
+
+    Allows gpt-4o-mini (any dated snapshot) and gpt-3.5-turbo variants.
+    Anything else falls back to DEFAULT_AI_MODEL.
+    """
+    r = (requested or "").strip()
+    if not r:
+        return DEFAULT_AI_MODEL, False
+    lower = r.lower()
+    if lower == DEFAULT_AI_MODEL.lower():
+        return DEFAULT_AI_MODEL, False
+    if lower.startswith("gpt-4o-mini"):
+        return r, False
+    if lower.startswith("gpt-3.5-turbo"):
+        return r, False
+    return DEFAULT_AI_MODEL, True
+
 
 def suggest_apps(
     user_message: str,
