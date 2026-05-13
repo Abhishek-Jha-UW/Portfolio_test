@@ -66,7 +66,7 @@ def _render_project_card(p: dict, *, show_featured_badge: bool) -> None:
 
 
 if "theme" not in st.session_state:
-    st.session_state.theme = "light"
+    st.session_state.theme = "dark"
 
 site = load_site()
 projects = sort_projects(load_projects_raw())
@@ -80,6 +80,7 @@ with st.sidebar:
         options=["Light", "Dark"],
         index=1 if is_dark else 0,
         horizontal=True,
+        key="theme_radio",
     )
     st.session_state.theme = "dark" if theme_choice == "Dark" else "light"
     if (st.session_state.theme == "dark") != is_dark:
@@ -128,7 +129,7 @@ with tab_apps:
         unsafe_allow_html=True,
     )
 
-    m1, m2, m3, m4 = st.columns(4)
+    m1, m2, m3, m4 = st.columns([1.05, 1.05, 1.05, 1.35])
     with m1:
         st.metric("Apps", len(projects))
     with m2:
@@ -136,7 +137,11 @@ with tab_apps:
     with m3:
         st.metric("Featured", sum(1 for p in projects if p.get("featured")))
     with m4:
-        st.metric("Focus", "Decision systems")
+        st.metric(
+            "Experience",
+            "Hands-on",
+            help="Interactive Streamlit apps across forecasting, experimentation, pricing, GenAI, and data systems.",
+        )
 
     feats = featured_projects(projects)
     if feats:
@@ -228,6 +233,9 @@ with tab_ai:
     if st.session_state.get("ai_last_answer"):
         st.markdown("---")
         st.markdown(st.session_state["ai_last_answer"])
+        if st.button("Clear AI response"):
+            st.session_state.pop("ai_last_answer", None)
+            st.rerun()
 
 st.divider()
 st.caption("© 2026 Abhishek Jha • Analytics & Decision Science")
