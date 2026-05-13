@@ -37,8 +37,8 @@
       "category": "Experimentation & Growth",
       "tagline": "Statistical testing workflow for product experiments.",
       "tags": ["Experimentation", "Causal", "Statistics"],
-      "featured": false,
-      "order": 20
+      "featured": true,
+      "order": 19
     },
     {
       "id": "customer-health-churn",
@@ -57,7 +57,7 @@
       "category": "Market Intelligence",
       "tagline": "LLM-assisted strategic mapping to reveal positioning and whitespace.",
       "tags": ["LLM", "PCA/MDS", "Strategy"],
-      "featured": false,
+      "featured": true,
       "order": 30
     },
     {
@@ -82,11 +82,11 @@
     },
     {
       "id": "rag-assistant",
-      "name": "Document Q&A Assistant (RAG)",
+      "name": "RAG — Retrieval-Augmented Generation (Document Q&A)",
       "url": "https://rag-abhi-uw.streamlit.app/",
       "category": "GenAI",
-      "tagline": "RAG interface for querying documents with semantic retrieval.",
-      "tags": ["RAG", "LLM", "Search"],
+      "tagline": "RAG over your documents: semantic retrieval plus an LLM for grounded answers.",
+      "tags": ["RAG", "Retrieval-Augmented Generation", "LLM"],
       "featured": true,
       "order": 50
     },
@@ -157,7 +157,7 @@
       "category": "Market Intelligence",
       "tagline": "Competitive strength and vulnerability lens across market positions.",
       "tags": ["Competitive Intel", "Benchmarking", "Strategy"],
-      "featured": false,
+      "featured": true,
       "order": 31
     },
     {
@@ -167,7 +167,7 @@
       "category": "GenAI",
       "tagline": "LLM-assisted tailoring of resume content to roles and keywords.",
       "tags": ["GenAI", "Resume", "Career"],
-      "featured": true,
+      "featured": false,
       "order": 51
     }
   ]
