@@ -29,6 +29,26 @@ def resolve_cost_efficient_model(requested: str | None) -> tuple[str, bool]:
     return DEFAULT_AI_MODEL, True
 
 
+def _message_text(content: Any) -> str:
+    """Normalize OpenAI message.content (str, None, or rare list/shape) to plain text."""
+    if content is None:
+        return ""
+    if isinstance(content, str):
+        return content
+    if isinstance(content, list):
+        parts: list[str] = []
+        for block in content:
+            if isinstance(block, dict):
+                if block.get("type") == "text" and isinstance(block.get("text"), str):
+                    parts.append(block["text"])
+                elif isinstance(block.get("text"), str):
+                    parts.append(block["text"])
+            elif isinstance(block, str):
+                parts.append(block)
+        return "".join(parts)
+    return str(content)
+
+
 def suggest_apps(
     user_message: str,
     projects: list[dict[str, Any]],
@@ -46,6 +66,9 @@ def suggest_apps(
         "Recommend up to three apps when possible, fewer if the question is narrow. "
         "For each recommendation, include a markdown link using the exact url from JSON, e.g. "
         "[App name](exact_url). Do not invent URLs. "
+        "If the question is broad (examples: market research, strategy, pricing, forecasting, GenAI), "
+        "still pick the closest matches from the JSON and explain briefly why—do not reply with an empty list. "
+        "For market research / competitive intelligence, prioritize Market Intelligence apps when present. "
         "If the question is not about choosing apps, answer briefly and still suggest relevant apps if any. "
         "Do not claim private or unverifiable facts about the author beyond the provided metadata."
     )
@@ -57,8 +80,12 @@ def suggest_apps(
             {"role": "user", "content": user},
         ],
         temperature=0.4,
+        max_tokens=700,
     )
-    choice = resp.choices[0].message.content
-    if not choice:
-        return "_No response from the model._"
-    return choice.strip()
+    choice = _message_text(resp.choices[0].message.content)
+    out = choice.strip()
+    if not out:
+        return (
+            "_The model returned an empty reply. Try rephrasing, or check your API key and model access._"
+        )
+    return out
