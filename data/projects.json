@@ -28,7 +28,7 @@
       "tagline": "Scenario simulation to understand price–demand trade-offs.",
       "tags": ["Pricing", "Elasticity", "Simulation"],
       "featured": true,
-      "order": 11
+      "order": 13
     },
     {
       "id": "ab-testing-tool",
@@ -38,7 +38,7 @@
       "tagline": "Statistical testing workflow for product experiments.",
       "tags": ["Experimentation", "Causal", "Statistics"],
       "featured": true,
-      "order": 19
+      "order": 15
     },
     {
       "id": "customer-health-churn",
@@ -58,7 +58,7 @@
       "tagline": "LLM-assisted strategic mapping to reveal positioning and whitespace.",
       "tags": ["LLM", "PCA/MDS", "Strategy"],
       "featured": true,
-      "order": 30
+      "order": 11
     },
     {
       "id": "guardiansql",
@@ -88,7 +88,7 @@
       "tagline": "RAG over your documents: semantic retrieval plus an LLM for grounded answers.",
       "tags": ["RAG", "Retrieval-Augmented Generation", "LLM"],
       "featured": true,
-      "order": 50
+      "order": 17
     },
     {
       "id": "clv-vs-bootstrap",
@@ -108,7 +108,7 @@
       "tagline": "AI-assisted conjoint exploration for attribute trade-offs.",
       "tags": ["Conjoint", "Pricing", "Strategy"],
       "featured": true,
-      "order": 61
+      "order": 18
     },
     {
       "id": "retention-crm",
@@ -118,7 +118,7 @@
       "tagline": "CRM-oriented view of retention drivers and revenue impact scenarios.",
       "tags": ["CRM", "Churn", "Revenue"],
       "featured": true,
-      "order": 22
+      "order": 16
     },
     {
       "id": "pvm-variance",
@@ -138,7 +138,7 @@
       "tagline": "Media mix modeling and budget optimization for marketing spend.",
       "tags": ["MMM", "Marketing", "Optimization"],
       "featured": true,
-      "order": 12
+      "order": 14
     },
     {
       "id": "ltv-cac-payback",
@@ -148,7 +148,7 @@
       "tagline": "Lifetime value, CAC, and payback framing for growth decisions.",
       "tags": ["CLV", "LTV", "CAC"],
       "featured": false,
-      "order": 13
+      "order": 63
     },
     {
       "id": "clout-vulnerability",
@@ -158,7 +158,7 @@
       "tagline": "Competitive strength and vulnerability lens across market positions.",
       "tags": ["Competitive Intel", "Benchmarking", "Strategy"],
       "featured": true,
-      "order": 31
+      "order": 12
     },
     {
       "id": "resume-tailor",
