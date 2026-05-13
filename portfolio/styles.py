@@ -17,6 +17,9 @@ def inject_global_css(*, dark: bool) -> str:
         btn_text = "#0b1220"
         btn_hover_bg = "#cbd5e1"
         section_muted = "rgba(229,231,235,0.60)"
+        browse_fg = "#93c5fd"
+        browse_bg = "rgba(59, 130, 246, 0.18)"
+        browse_bd = "rgba(147, 197, 253, 0.42)"
     else:
         bg = "#ffffff"
         panel = "#f7f8fa"
@@ -31,10 +34,36 @@ def inject_global_css(*, dark: bool) -> str:
         btn_text = "#ffffff"
         btn_hover_bg = "#1f2937"
         section_muted = "rgba(17,24,39,0.60)"
+        browse_fg = "#1d4ed8"
+        browse_bg = "rgba(37, 99, 235, 0.10)"
+        browse_bd = "rgba(37, 99, 235, 0.30)"
 
     return f"""
 <style>
-.block-container {{ padding-top: 2.35rem; padding-bottom: 2.5rem; max-width: 1200px; }}
+/* Room under Streamlit's fixed header so primary tabs stay visible */
+.ah-top-spacer {{
+  min-height: calc(4.5rem + env(safe-area-inset-top, 0px));
+  height: calc(4.5rem + env(safe-area-inset-top, 0px));
+  width: 100%;
+  flex-shrink: 0;
+}}
+
+.block-container {{
+  padding-top: 0.85rem;
+  padding-bottom: 2.5rem;
+  max-width: 1200px;
+  overflow: visible !important;
+}}
+
+div[data-testid="stAppViewContainer"] main,
+section[data-testid="stMain"],
+section[data-testid="stMain"] > div {{
+  overflow: visible !important;
+}}
+
+section[data-testid="stMain"] > div {{
+  padding-top: 0 !important;
+}}
 
 .stApp {{
   background-color: {bg};
@@ -53,10 +82,6 @@ section[data-testid="stSidebar"] * {{
 h1, h2, h3 {{
   letter-spacing: -0.02em;
   color: {text};
-}}
-
-section[data-testid="stMain"] > div {{
-  padding-top: 0.35rem;
 }}
 
 .stCaption, [data-testid="stCaptionContainer"] {{
@@ -121,6 +146,17 @@ div[data-testid="stMetricValue"] {{
   text-transform: uppercase;
   color: {section_muted};
   margin: 1.1rem 0 0.45rem 0;
+}}
+
+.ah-section-label.ah-section-browse {{
+  display: inline-block;
+  color: {browse_fg} !important;
+  background: {browse_bg} !important;
+  border: 1px solid {browse_bd} !important;
+  border-radius: 8px !important;
+  padding: 0.45rem 0.8rem !important;
+  margin: 1.25rem 0 0.55rem 0 !important;
+  letter-spacing: 0.11em !important;
 }}
 
 .ah-card {{
@@ -200,21 +236,37 @@ div[data-testid="stMarkdownContainer"] > p {{ margin-bottom: 0.25rem; }}
 }}
 
 [data-testid="stTabs"] {{
-  margin-top: 0.35rem;
-  padding-top: 0.5rem;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
   position: relative;
-  z-index: 2;
+  z-index: 200;
 }}
 
 [data-testid="stTabs"] [data-baseweb="tab-list"] {{
-  gap: 8px;
-  padding-top: 0.15rem;
+  gap: 10px;
+  padding: 10px 12px !important;
   flex-wrap: wrap;
+  background: {panel} !important;
+  border: 1px solid {border} !important;
+  border-radius: 12px !important;
 }}
 
 [data-testid="stTabs"] button {{
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  padding: 0.55rem 1.05rem !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  color: {muted} !important;
+  border-radius: 8px !important;
+}}
+
+[data-testid="stTabs"] button[aria-selected="true"] {{
+  color: {text} !important;
+  background: {card} !important;
+  border: 1px solid {border} !important;
+}}
+
+[data-testid="stTabs"] button p {{
+  color: inherit !important;
 }}
 </style>
 """.strip()
