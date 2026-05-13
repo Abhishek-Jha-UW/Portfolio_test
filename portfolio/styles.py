@@ -61,6 +61,16 @@ h1, h2, h3 {{
 
 div[data-testid="stMetricValue"] {{
   color: {text};
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  line-height: 1.25rem;
+  overflow-wrap: anywhere;
+}}
+
+[data-testid="stMetricLabel"] {{
+  white-space: normal !important;
+  overflow: visible !important;
 }}
 
 .ah-hero {{
