@@ -1,6 +1,6 @@
 # Analytics Hub (Streamlit)
 
-Single **portfolio hub** that lists every deployed Streamlit app, supports **light/dark** themes, optional **OpenAI-powered** “which app should I open?” guidance, and keeps data in **`data/projects.json`** so URLs stay consistent (including the GitHub wake workflow).
+Single **portfolio hub** that lists every deployed Streamlit app, supports **light/dark** themes (defaults to **dark**), optional **OpenAI-powered** “which app should I open?” guidance, and keeps data in **`data/projects.json`** so URLs stay consistent (including the GitHub wake workflow).
 
 ## Run locally
 
