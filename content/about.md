@@ -10,7 +10,7 @@ Each app is meant to be explored hands-on: adjust assumptions, run scenarios, an
 - **Experimentation & growth** — A/B testing, churn risk, and CRM retention impact  
 - **Market intelligence** — competitive mapping and benchmark-style positioning views  
 - **Data systems** — recommendations, SQL-centric data quality (GuardianSQL)  
-- **GenAI** — RAG over documents and practical tooling such as resume tailoring  
+- **GenAI** — retrieval-augmented generation over documents and practical tooling such as resume tailoring  
 
 ### Contact
 
