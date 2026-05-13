@@ -266,30 +266,55 @@ div[data-testid="stMarkdownContainer"] > p {{ margin-bottom: 0.25rem; }}
   color: {text} !important;
 }}
 
-/* Primary & form submit — Streamlit default primary is low-contrast on dark theme */
+/* Primary & form submit — theme primaryColor + BaseWeb vary by Streamlit version */
 [data-testid="baseButton-primary"],
-[data-testid="stFormSubmitButton"] button {{
+[data-testid="stBaseButton-primary"],
+[data-testid="stFormSubmitButton"] button,
+[data-testid="stFormSubmitButton"] [data-baseweb="button"],
+div[data-testid="stForm"] button[type="submit"],
+div[data-testid="stForm"] [data-baseweb="button"][kind="primary"],
+button[kind="primary"] {{
   background-color: {btn} !important;
+  background-image: none !important;
   color: {btn_text} !important;
+  -webkit-text-fill-color: {btn_text} !important;
   border: 1px solid {btn} !important;
   font-weight: 700 !important;
 }}
 [data-testid="baseButton-primary"]:hover,
-[data-testid="stFormSubmitButton"] button:hover:not(:disabled) {{
+[data-testid="stBaseButton-primary"]:hover,
+[data-testid="stFormSubmitButton"] button:hover:not(:disabled),
+[data-testid="stFormSubmitButton"] [data-baseweb="button"]:hover:not(:disabled),
+div[data-testid="stForm"] button[type="submit"]:hover:not(:disabled),
+button[kind="primary"]:hover:not(:disabled) {{
   background-color: {btn_hover_bg} !important;
+  background-image: none !important;
   color: {btn_text} !important;
+  -webkit-text-fill-color: {btn_text} !important;
   border-color: {btn_hover_bg} !important;
 }}
 [data-testid="baseButton-primary"]:disabled,
-[data-testid="stFormSubmitButton"] button:disabled {{
+[data-testid="stBaseButton-primary"]:disabled,
+[data-testid="stFormSubmitButton"] button:disabled,
+[data-testid="stFormSubmitButton"] [data-baseweb="button"]:disabled,
+div[data-testid="stForm"] button[type="submit"]:disabled,
+button[kind="primary"]:disabled {{
   opacity: 0.5 !important;
   cursor: not-allowed !important;
 }}
 [data-testid="baseButton-primary"] p,
 [data-testid="baseButton-primary"] span,
+[data-testid="stBaseButton-primary"] p,
+[data-testid="stBaseButton-primary"] span,
 [data-testid="stFormSubmitButton"] button p,
-[data-testid="stFormSubmitButton"] button span {{
+[data-testid="stFormSubmitButton"] button span,
+[data-testid="stFormSubmitButton"] [data-baseweb="button"] p,
+[data-testid="stFormSubmitButton"] [data-baseweb="button"] span,
+div[data-testid="stForm"] button[type="submit"] p,
+button[kind="primary"] p,
+button[kind="primary"] span {{
   color: {btn_text} !important;
+  -webkit-text-fill-color: {btn_text} !important;
 }}
 </style>
 """.strip()
